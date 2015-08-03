@@ -1,0 +1,31 @@
+{
+  "name": "generator-wordpress-ghpages",
+  "version": "0.0.0",
+  "description": "Yeoman generator for WordPress and Github Pages",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shgtkshruch/generator-wordpress-ghpages.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "wordpress",
+    "ghpages"
+  ],
+  "author": "shgtkshruch <shgtkshruch@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shgtkshruch/generator-wordpress-ghpages/issues"
+  },
+  "homepage": "https://github.com/shgtkshruch/generator-wordpress-ghpages#readme",
+  "dependencies": {
+    "yeoman-generator": "^0.20.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "yeoman-assert": "^2.0.0"
+  }
+}
