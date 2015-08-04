@@ -7,11 +7,15 @@ describe('WordPress Github Pages generator', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../app'))
       .inDir(path.join(__dirname, 'temp'))
+      .withPrompts({
+        themeName: 'wordpress-ghpages'
+      })
       .on('end', done);
   });
 
   it('creates expected files', function () {
     assert.file([
+      'gulpfile.js',
       'Vagrantfile',
       'ansible/playbook.yml',
       'ansible/group_vars/all',
@@ -32,5 +36,7 @@ describe('WordPress Github Pages generator', function () {
       'ansible/roles/wp-cli/tasks/main.yml',
       'ansible/roles/wp-cli/files/config.yml'
     ]);
+
+    assert.fileContent('gulpfile.js', "dest: 'wordpress/wp-content/themes/wordpress-ghpages'");
   });
 });
