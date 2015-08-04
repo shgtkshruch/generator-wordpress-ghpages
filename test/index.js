@@ -15,6 +15,7 @@ describe('WordPress Github Pages generator', function () {
 
   it('creates expected files', function () {
     assert.file([
+      'package.json',
       'gulpfile.js',
       'Vagrantfile',
       'ansible/playbook.yml',
@@ -37,6 +38,7 @@ describe('WordPress Github Pages generator', function () {
       'ansible/roles/wp-cli/files/config.yml'
     ]);
 
+    assert.fileContent('package.json', '"name": "temp"');
     assert.fileContent('gulpfile.js', "dest: 'wordpress/wp-content/themes/wordpress-ghpages'");
   });
 });

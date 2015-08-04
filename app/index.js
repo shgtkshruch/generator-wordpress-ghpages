@@ -1,4 +1,5 @@
 var generators = require('yeoman-generator');
+var _s = require('underscore.string');
 
 module.exports = generators.Base.extend({
   constructor: function () {
@@ -40,6 +41,15 @@ module.exports = generators.Base.extend({
         this.destinationPath('gulpfile.js'),
         {
           themeName: this.themeName
+        }
+      );
+    },
+    packageJSON: function () {
+      this.fs.copyTpl(
+        this.templatePath('package.json'),
+        this.destinationPath('package.json'),
+        {
+          name: _s.slugify(this.appname)
         }
       );
     }
