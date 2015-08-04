@@ -8,8 +8,14 @@ module.exports = generators.Base.extend({
   writing: {
     vagrant: function () {
       this.fs.copy(
-          this.templatePath('Vagrantfile'),
-          this.destinationPath('Vagrantfile'));
+        this.templatePath('Vagrantfile'),
+        this.destinationPath('Vagrantfile'));
+    },
+
+    ansible: function () {
+      this.directory(
+        this.templatePath('ansible'),
+        this.destinationPath('ansible'));
     }
   }
 });
