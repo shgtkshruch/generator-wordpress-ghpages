@@ -5,7 +5,7 @@ vagrant_ip: 192.168.33.10
 # WordPress
 wp_version: 4.2.3
 
-wp_title: WordPress Github Pages
+wp_title: WordPress-Github-Pages
 wp_user: wordpress
 wp_password: secret
 wp_mail: example@gmail.com
