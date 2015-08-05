@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
+var ghpages = require('gh-pages');
+var path = require('path');
 
 var config = {
   src: 'src',
@@ -44,6 +46,10 @@ gulp.task('php', function () {
     .pipe($.changed(config.dest))
     .pipe(gulp.dest(config.dest))
     .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('deploy', function () {
+  ghpages.publish(path.join(__dirname, 'static/<%= name %>'));
 });
 
 gulp.task('default', ['browserSync'], function () {

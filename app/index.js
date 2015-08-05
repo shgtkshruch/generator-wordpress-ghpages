@@ -46,7 +46,8 @@ module.exports = generators.Base.extend({
         this.templatePath('gulpfile.js'),
         this.destinationPath('gulpfile.js'),
         {
-          themeName: this.themeName
+          themeName: this.themeName,
+          name: _s.slugify(this.appname)
         }
       );
     },

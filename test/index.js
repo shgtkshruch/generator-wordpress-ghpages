@@ -41,5 +41,6 @@ describe('WordPress Github Pages generator', function () {
 
     assert.fileContent('package.json', '"name": "temp"');
     assert.fileContent('gulpfile.js', "dest: 'wordpress/wp-content/themes/wordpress-ghpages'");
+    assert.fileContent('gulpfile.js', 'static/temp');
   });
 });
