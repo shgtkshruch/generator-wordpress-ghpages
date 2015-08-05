@@ -15,6 +15,7 @@ describe('WordPress Github Pages generator', function () {
 
   it('creates expected files', function () {
     assert.file([
+      '.gitignore',
       'package.json',
       'gulpfile.js',
       'Vagrantfile',

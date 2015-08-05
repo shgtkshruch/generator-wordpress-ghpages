@@ -23,6 +23,12 @@ module.exports = generators.Base.extend({
   },
 
   writing: {
+    git: function () {
+      this.fs.copy(
+        this.templatePath('gitignore'),
+        this.destinationPath('.gitignore'));
+    },
+
     vagrant: function () {
       this.fs.copy(
         this.templatePath('Vagrantfile'),
@@ -44,6 +50,7 @@ module.exports = generators.Base.extend({
         }
       );
     },
+
     packageJSON: function () {
       this.fs.copyTpl(
         this.templatePath('package.json'),
