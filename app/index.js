@@ -61,5 +61,14 @@ module.exports = generators.Base.extend({
         }
       );
     }
+  },
+
+  install: function () {
+    this.installDependencies({
+      bower: false,
+      npm: true,
+      skipInstall: this.options['skip-install']
+    });
   }
+
 });

@@ -7,6 +7,9 @@ describe('WordPress Github Pages generator', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../app'))
       .inDir(path.join(__dirname, 'temp'))
+      .withOptions({
+        'skip-install': true
+      })
       .withPrompts({
         themeName: 'wordpress-ghpages'
       })
