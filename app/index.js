@@ -65,6 +65,7 @@ module.exports = generators.Base.extend({
 
     wordpress: function () {
       mkdirp('wordpress/wp-content/themes/' + this.themeName);
+      mkdirp('static');
     }
   },
 
