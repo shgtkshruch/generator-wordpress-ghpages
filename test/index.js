@@ -39,7 +39,8 @@ describe('WordPress Github Pages generator', function () {
       'ansible/roles/wordpress/tasks/main.yml',
       'ansible/roles/wordpress/templates/wp-config.php',
       'ansible/roles/wp-cli/tasks/main.yml',
-      'ansible/roles/wp-cli/files/config.yml'
+      'ansible/roles/wp-cli/files/config.yml',
+      'wordpress/wp-content/themes/wordpress-ghpages'
     ]);
 
     assert.fileContent('package.json', '"name": "temp"');

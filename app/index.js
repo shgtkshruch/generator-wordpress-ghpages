@@ -1,5 +1,6 @@
 var generators = require('yeoman-generator');
 var _s = require('underscore.string');
+var mkdirp = require('mkdirp');
 
 module.exports = generators.Base.extend({
   constructor: function () {
@@ -60,6 +61,10 @@ module.exports = generators.Base.extend({
           name: _s.slugify(this.appname)
         }
       );
+    },
+
+    wordpress: function () {
+      mkdirp('wordpress/wp-content/themes/' + this.themeName);
     }
   },
 
