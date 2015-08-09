@@ -66,6 +66,32 @@ module.exports = generators.Base.extend({
     wordpress: function () {
       mkdirp('wordpress/wp-content/themes/' + this.themeName);
       mkdirp('static');
+    },
+
+    app: function () {
+      this.fs.copy(
+        this.templatePath('index.php'),
+        this.destinationPath('src/index.php'));
+
+      this.fs.copy(
+        this.templatePath('header.php'),
+        this.destinationPath('src/header.php'));
+
+      this.fs.copy(
+        this.templatePath('footer.php'),
+        this.destinationPath('src/footer.php'));
+
+      this.fs.copy(
+        this.templatePath('functions.php'),
+        this.destinationPath('src/functions.php'));
+
+      this.fs.copyTpl(
+        this.templatePath('style.scss'),
+        this.destinationPath('src/styles/style.scss'),
+        {
+          themeName: this.themeName
+        }
+      );
     }
   },
 

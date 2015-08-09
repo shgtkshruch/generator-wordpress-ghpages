@@ -41,11 +41,17 @@ describe('WordPress Github Pages generator', function () {
       'ansible/roles/wp-cli/tasks/main.yml',
       'ansible/roles/wp-cli/files/config.yml',
       'wordpress/wp-content/themes/wordpress-ghpages',
-      'static'
+      'static',
+      'src/index.php',
+      'src/header.php',
+      'src/footer.php',
+      'src/functions.php',
+      'src/styles/style.scss'
     ]);
 
     assert.fileContent('package.json', '"name": "temp"');
     assert.fileContent('gulpfile.js', "dest: 'wordpress/wp-content/themes/wordpress-ghpages'");
     assert.fileContent('gulpfile.js', 'static/temp');
+    assert.fileContent('src/styles/style.scss', 'Theme Name: wordpress-ghpages');
   });
 });
