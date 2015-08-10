@@ -45,5 +45,9 @@
   command: wp core install --title={{ wp_title }} --admin_user={{ wp_user }} --admin_password={{ wp_password }} --admin_email={{ wp_mail }} --url={{ vagrant_ip }}/wordpress
   sudo: no
 
+- name: Install StaticPress
+  command: wp plugin install --activate staticpress
+  sudo: no
+
 - name: Message
   debug: msg="Please open http://{{ vagrant_ip }}/wordpress/wp-login.php with your browser to install WordPress"
