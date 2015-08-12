@@ -6,7 +6,7 @@ var path = require('path');
 
 var config = {
   src: 'src',
-  dest: 'wordpress/wp-content/themes/<%= themeName %>',
+  dest: 'dest',
 };
 
 gulp.task('browserSync', function () {

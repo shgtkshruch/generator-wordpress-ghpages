@@ -31,9 +31,13 @@ module.exports = generators.Base.extend({
     },
 
     vagrant: function () {
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('Vagrantfile'),
-        this.destinationPath('Vagrantfile'));
+        this.destinationPath('Vagrantfile'),
+        {
+          themeName: this.themeName
+        }
+      );
     },
 
     ansible: function () {
@@ -47,7 +51,6 @@ module.exports = generators.Base.extend({
         this.templatePath('gulpfile.js'),
         this.destinationPath('gulpfile.js'),
         {
-          themeName: this.themeName,
           name: _s.slugify(this.appname)
         }
       );
@@ -66,6 +69,7 @@ module.exports = generators.Base.extend({
     wordpress: function () {
       mkdirp('wordpress/wp-content/themes/' + this.themeName);
       mkdirp('static');
+      mkdirp('dest');
     },
 
     app: function () {

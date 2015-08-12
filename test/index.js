@@ -46,11 +46,12 @@ describe('WordPress Github Pages generator', function () {
       'src/header.php',
       'src/footer.php',
       'src/functions.php',
-      'src/styles/style.scss'
+      'src/styles/style.scss',
+      'dest'
     ]);
 
     assert.fileContent('package.json', '"name": "temp"');
-    assert.fileContent('gulpfile.js', "dest: 'wordpress/wp-content/themes/wordpress-ghpages'");
+    assert.fileContent('Vagrantfile', '/var/www/html/wordpress/wp-content/themes/wordpress-ghpages');
     assert.fileContent('gulpfile.js', 'static/temp');
     assert.fileContent('src/styles/style.scss', 'Theme Name: wordpress-ghpages');
   });
